@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {ConexionService} from '../service/conexion.service'
 import { Observable } from 'rxjs';
 import { Categoria } from '../interfaces/Categoria';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-categorias',
@@ -10,29 +11,58 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./categorias.component.css']
 })
 export class CategoriasComponent {
-  @Input() form:String;
+  cat1: Categoria = {id_categoria: 0, cat_nombre: "", cat_descripcion: ""};
   listado: Categoria[] = [];
-  // categoria: Categoria ={id_categoria:0, cat_nombre: '', cat_descripcion:''}; para el id
-  constructor(private route: ActivatedRoute, private conexion: ConexionService){
+
+  /**
+   * Para enviar los datos a edit categoria donde esta el formulario
+   * @param dCat 
+   */
+
+  irEdit(dCat: Categoria){
+    this.router.navigate(['/edit-categorias'],{
+      state: {data: { cat: dCat} },
+    });
+  }
+
+  constructor(private route: ActivatedRoute,private router: Router,private conexion: ConexionService){
     const dato: Observable<any> = this.conexion.leerApi('categorias');
-    const elim: Observable<any> = this.conexion.deleteApi('categorias');
 
     dato.subscribe((resp:any) => {
       // this.categoria = resp as Categoria[]; se haria asi si fuera solo para un id
-      // this.listado = resp;
-      // let stat:number = resp.status;
+      this.listado = resp as Categoria[];
 
-      // if(stat==1){
-        this.listado = resp.data as Categoria[];
-        // console.log(this.listado);
-      // }
     })
   }
 
-  irFormulario(form: Categoria):void{
-      this.router.navigate([])
-      
-
+  /**
+   * Elimina de la base de datos el id que has clickado en el icono rojo
+   * @param id 
+   */
+  deleteId(id:number) {
+    this.conexion.deleteApi('categorias/'+ id).subscribe(response => {
+        console.log("???");
+        
+        window.location.reload();
+      })
+      console.log(id);
   }
 
-}
+  /**
+   * En el pequeño formulario de arriba envia los datos a la base de datos con este método
+   * @param value 
+   */
+
+  submitData(value:any){
+    let body = {
+      cat_nombre: value.cat_nombre,
+      cat_descripcion: value.cat_descripcion,
+    }
+    this.conexion.postApi('categorias',body).subscribe(response => {
+      window.location.reload();
+      
+    })
+  }
+
+  }
+    

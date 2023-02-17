@@ -1,32 +1,33 @@
 <div class="center-div">
   <div class="col-md-10">
     <h2 class="text-center">Editar una categoria</h2>
-    <form novalidate="" >
+    <form #postForm="ngForm" class="row g-3" (ngSubmit)="editData(postForm.value)" >
       <div class="form-group">
         <label for="lastname">ID Categoria:</label>
-        <!-- <input formControlName="cat_id" placeholder="id" name="cat_id" class="form-control" id="lastname"> -->
+        <input formControlName="cat_id" placeholder="{{id}}" name="cat_id" class="form-control" id="id" value="{{id}}" [readonly]="true">
       </div>
 
       <div class="form-group">
-        <label for="lastname">Nombre Categoria:</label>
-        <input
+        <label for="name">Nombre Categoria: </label>
+        <input 
           formControlName="cat_nombre"
-          placeholder="nombre"
+          placeholder="{{nombre}}"
           name="cat_nombre"
           class="form-control"
-          id="lastname"
+          id="name"
+          value="{{nombre}}"
         /> <!--[(ngModel)]="categoria.id_categoria"-->
       </div>
 
       <div class="form-group">
-        <label for="email">Descripcion categoria</label>
+        <label for="desc">Descripcion categoria</label>
         <input
-          type="email"
           formControlName="cat_descripcion"
-          placeholder="descripcion"
+          placeholder="{{desc}}"
           name="cat_descripcion"
           class="form-control"
-          id="email"
+          id="desc"
+          value="{{desc}}"
         />
       </div><br>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">

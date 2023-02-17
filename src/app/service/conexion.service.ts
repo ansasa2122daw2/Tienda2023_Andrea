@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
 import { share } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'any',
+  
 })
 export class ConexionService {
   //direccion donde buscar las cosas (la que llamas no es la de angular) pides datos al servidor
@@ -29,6 +30,10 @@ export class ConexionService {
   deleteApi(url:string): Observable<any>{
     return this.http.delete(this.API_URL+url).pipe(share());
   }
+
+  // deleteApi(url:string): Observable<any>{
+  //   return this.http.delete(url:string).pipe(share());
+  // }
 
 
 }
