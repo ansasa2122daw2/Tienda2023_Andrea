@@ -1,0 +1,40 @@
+<div class="center-div">
+  <div class="col-md-10">
+    <h2 class="text-center">Editar una categoria</h2>
+    <form novalidate="" >
+      <div class="form-group">
+        <label for="lastname">ID Categoria:</label>
+        <!-- <input formControlName="cat_id" placeholder="id" name="cat_id" class="form-control" id="lastname"> -->
+      </div>
+
+      <div class="form-group">
+        <label for="lastname">Nombre Categoria:</label>
+        <input
+          formControlName="cat_nombre"
+          placeholder="nombre"
+          name="cat_nombre"
+          class="form-control"
+          id="lastname"
+        /> <!--[(ngModel)]="categoria.id_categoria"-->
+      </div>
+
+      <div class="form-group">
+        <label for="email">Descripcion categoria</label>
+        <input
+          type="email"
+          formControlName="cat_descripcion"
+          placeholder="descripcion"
+          name="cat_descripcion"
+          class="form-control"
+          id="email"
+        />
+      </div><br>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="submit" class="btn btn-success">Submit</button><!--[disabled]="formulario.invalid" && (click)="" -->
+        <button type="cancel" routerLink="/categorias" class="btn btn-danger ml-2">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
