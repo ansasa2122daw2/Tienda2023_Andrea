@@ -12,6 +12,7 @@ import { RouterLinkActive } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AddCategoriasComponent } from './add-categorias/add-categorias.component';
 
 
 
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     MainComponent,
     CategoriasComponent,
-    EditCategoriasComponent
+    EditCategoriasComponent,
+    AddCategoriasComponent
   ],
   imports: [
     BrowserModule,

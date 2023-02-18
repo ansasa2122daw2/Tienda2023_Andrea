@@ -4,6 +4,12 @@
   padding: 2%;
 }
 
-#id{
+#id_categoria{
   cursor:not-allowed;
+}
+
+.alert{
+  width: 12.5em;
+  height: 8.3em;
+  font-size: 15px;
 }

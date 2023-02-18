@@ -1,0 +1,12 @@
+.center-div {
+    margin: auto;
+    width: 30%;
+    padding: 2%;
+  }
+
+  .alert{
+    width: 12.5em;
+    height: 8.3em;
+    font-size: 15px;
+  }
+  

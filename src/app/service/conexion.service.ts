@@ -19,6 +19,10 @@ export class ConexionService {
     return this.http.get(this.API_URL+url).pipe(share());
   }
 
+  leerUnaApi(url:string): Observable<any>{
+    return this.http.get(this.API_URL+url).pipe(share());
+  }
+
   postApi(url:string, dto:any): Observable<any>{
     return this.http.post(this.API_URL+url,dto).pipe(share());
   }
@@ -30,10 +34,6 @@ export class ConexionService {
   deleteApi(url:string): Observable<any>{
     return this.http.delete(this.API_URL+url).pipe(share());
   }
-
-  // deleteApi(url:string): Observable<any>{
-  //   return this.http.delete(url:string).pipe(share());
-  // }
 
 
 }

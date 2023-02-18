@@ -1,19 +1,11 @@
 <div class="center-div">
   <div class="col-md-10">
     <h2 class="text-center">Editar una categoria</h2>
-    <form #myForm="ngForm" (ngSubmit)="editData(myForm.value)" class="row g-3">
-      <div class="form-group">
-        <label for="text">ID Categoria:</label>
-        <input
-          formControlName="id_categoria"
-          name="id_categoria"
-          class="form-control"
-          id="id_categoria"
-          placeholder="{{ id_cat }}"
-          [readonly]="true"
-        />
-      </div>
-
+    <form
+      #postForm="ngForm"
+      class="row g-3"
+      (ngSubmit)="submitData(postForm.value)"
+    >
       <div class="form-group">
         <label for="text">Nombre Categoria: </label><br />
         <input

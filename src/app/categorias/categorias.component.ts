@@ -41,7 +41,6 @@ export class CategoriasComponent {
    */
   deleteId(id:number) {
     this.conexion.deleteApi('categorias/'+ id).subscribe(response => {
-        console.log("???");
         
         window.location.reload();
       })
