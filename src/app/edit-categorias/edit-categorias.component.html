@@ -2,54 +2,53 @@
   <div class="col-md-10">
     <h2 class="text-center">Editar una categoria</h2>
     <form #myForm="ngForm" (ngSubmit)="editData(myForm.value)" class="row g-3">
-      <div class="form-group">
-        <label for="text">ID Categoria:</label>
-        <input
-          formControlName="id_categoria"
-          name="id_categoria"
-          class="form-control"
-          id="id_categoria"
-          placeholder="{{ id_cat }}"
-          [readonly]="true"
-        />
-      </div>
+      <div class="centrar">
+        <div class="form-group">
+          <label for="text">ID Categoria:</label>
+          <input
+            name="id_categoria"
+            class="form-control"
+            id="id_categoria"
+            placeholder="{{ id_cat }}"
+            [readonly]="true"
+          />
+        </div><br>
 
-      <div class="form-group">
-        <label for="text">Nombre Categoria: </label><br />
-        <input
-          input
-          name="cat_nombre"
-          ngModel
-          placeholder="Nombre categoria"
-          id="cat_nombre"
-          type="text"
-          class="input-field"
-          required
-          minlength="5"
-          maxlength="50"
-          #cat_nombre="ngModel"
-        />
-        <div
-          class="alert alert-danger"
-          *ngIf="cat_nombre.invalid && (cat_nombre.dirty || cat_nombre.touched)"
-        >
-          Nombre de la categoría no puede ser inferior de 5 carácteres ni
-          superior de 50.
+        <div class="form-group">
+          <label for="text">Nombre Categoria: </label><br />
+          <input
+            input
+            name="cat_nombre"
+            ngModel="{{nombre}}"
+            placeholder="{{nombre}}"
+            id="cat_nombre"
+            type="text"
+            class="form-control"
+            required
+            minlength="5"
+            maxlength="50"
+            #cat_nombre="ngModel"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="cat_nombre.invalid && (cat_nombre.dirty || cat_nombre.touched)"
+          >
+            Nombre de la categoría no puede ser inferior de 5 carácteres ni
+            superior de 50.
+          </div>
+        </div><br>
+
+        <div class="form-group">
+          <label for="text">Descripcion categoria</label><br />
+          <textarea
+            ngModel="{{desc}}"
+            placeholder="{{desc}}"
+            name="cat_descripcion"
+            id="cat_descripcion"
+            class="form-control"
+          ></textarea>
         </div>
-      </div>
-
-      <div class="form-group">
-        <label for="text">Descripcion categoria</label><br />
-        <input
-          input
-          name="cat_descripcion"
-          ngModel
-          placeholder="Descripcion"
-          id="cat_descripcion"
-          type="text"
-          class="input-field"
-        />
-      </div>
+    </div>
       <br />
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <button type="submit" class="btn btn-success">Submit</button>

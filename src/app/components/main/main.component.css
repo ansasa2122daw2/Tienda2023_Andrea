@@ -54,13 +54,13 @@
     background-color: #878886;
   }
 
-  /* body{
+  body{
     background-image: url("../../../assets/img/bursera-graveolens-planta-arbol-sagrado-espanol.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
+    min-height: 90vh
     
-  } */
-
+  }
 
 
   

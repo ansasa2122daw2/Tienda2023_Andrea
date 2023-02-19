@@ -3,6 +3,7 @@ import {ConexionService} from '../service/conexion.service'
 import { Observable } from 'rxjs';
 import { Categoria } from '../interfaces/Categoria';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -41,10 +42,15 @@ export class CategoriasComponent {
    */
   deleteId(id:number) {
     this.conexion.deleteApi('categorias/'+ id).subscribe(response => {
-        
-        window.location.reload();
+        window.location.reload(),9000;
       })
-      console.log(id);
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Categoria eliminada',
+        showConfirmButton: false,
+        timer: 1000
+      })
   }
 
   /**

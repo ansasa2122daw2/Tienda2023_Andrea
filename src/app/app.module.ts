@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddCategoriasComponent } from './add-categorias/add-categorias.component';
 
+import Swal from 'sweetalert2';
+
 
 
 @NgModule({
@@ -31,7 +33,7 @@ import { AddCategoriasComponent } from './add-categorias/add-categorias.componen
     FormsModule,
     HttpClientModule,
     RouterLinkActive,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

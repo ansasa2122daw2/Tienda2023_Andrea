@@ -1,47 +1,49 @@
 <div class="center-div">
   <div class="col-md-10">
-    <h2 class="text-center">Editar una categoria</h2>
-    <form
-      #postForm="ngForm"
-      class="row g-3"
-      (ngSubmit)="submitData(postForm.value)"
-    >
-      <div class="form-group">
-        <label for="text">Nombre Categoria: </label><br />
-        <input
-          input
-          name="cat_nombre"
-          ngModel
-          placeholder="Nombre categoria"
-          id="cat_nombre"
-          type="text"
-          class="input-field"
-          required
-          minlength="5"
-          maxlength="50"
-          #cat_nombre="ngModel"
-        />
-        <div
-          class="alert alert-danger"
-          *ngIf="cat_nombre.invalid && (cat_nombre.dirty || cat_nombre.touched)"
-        >
-          Nombre de la categoría no puede ser inferior de 5 carácteres ni
-          superior de 50.
-        </div>
-      </div>
+    <h2 class="text-center">Añadir una categoria</h2><br>
+      <form
+        #postForm="ngForm"
+        class="row g-3"
+        (ngSubmit)="submitData(postForm.value)"
+      >
+      <div class="centrar">
+        <div class="form-group">
+          <label for="text">Nombre Categoria: </label><br />
+          <input
+            input
+            name="cat_nombre"
+            ngModel
+            placeholder="Nombre categoria"
+            id="cat_nombre"
+            type="text"
+            class="form-control"
+            required
+            minlength="5"
+            maxlength="50"
+            #cat_nombre="ngModel"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="cat_nombre.invalid && (cat_nombre.dirty || cat_nombre.touched)"
+          >
+            Nombre de la categoría no puede ser inferior de 5 carácteres ni
+            superior de 50.
+          </div>
+        </div><br>
 
-      <div class="form-group">
-        <label for="text">Descripcion categoria</label><br />
-        <input
-          input
-          name="cat_descripcion"
-          ngModel
-          placeholder="Descripcion"
-          id="cat_descripcion"
-          type="text"
-          class="input-field"
-        />
-      </div>
+        <div class="form-group">
+          <label for="text">Descripcion categoria</label><br />
+          <textarea
+            input
+            name="cat_descripcion"
+            ngModel
+            placeholder="Descripcion"
+            id="cat_descripcion"
+            type="text"
+            class="form-control"
+          ></textarea>
+        </div>
+    </div>
       <br />
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <button type="submit" class="btn btn-success">Submit</button>
