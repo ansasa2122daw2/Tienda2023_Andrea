@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AddCategoriasComponent } from './add-categorias/add-categorias.component';
 
 import Swal from 'sweetalert2';
+import { PipePersonalizadaPipe } from './pipe/pipe-personalizada.pipe';
 
 
 
@@ -25,7 +26,8 @@ import Swal from 'sweetalert2';
     MainComponent,
     CategoriasComponent,
     EditCategoriasComponent,
-    AddCategoriasComponent
+    AddCategoriasComponent,
+    PipePersonalizadaPipe
   ],
   imports: [
     BrowserModule,

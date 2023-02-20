@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./categorias.component.css']
 })
 export class CategoriasComponent {
+  busquedaPost = '';
   cat1: Categoria = {id_categoria: 0, cat_nombre: "", cat_descripcion: ""};
   listado: Categoria[] = [];
 
@@ -41,16 +42,12 @@ export class CategoriasComponent {
    * @param id 
    */
   deleteId(id:number) {
-    this.conexion.deleteApi('categorias/'+ id).subscribe(response => {
+    if(confirm("¿Desea eliminar la categoria con id: "+id + "?")) {
+      this.conexion.deleteApi('categorias/'+ id).subscribe(response => {
         window.location.reload(),9000;
       })
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Categoria eliminada',
-        showConfirmButton: false,
-        timer: 1000
-      })
+    }
+
   }
 
   /**

@@ -17,6 +17,12 @@
       Añadir</button
     ><br />
   </div>
+  <input
+    id="busquedaPost"
+    name="busquedaPost"
+    placeholder="Buscar nombre categoria"
+    [(ngModel)]="busquedaPost"
+/><br><br>
   <table class="table">
     <thead>
       <tr>
@@ -27,7 +33,7 @@
     </thead>
 
     <tbody>
-      <tr *ngFor="let cat of listado">
+      <tr *ngFor="let cat of listado | pipePersonalizada: busquedaPost">
         <td>{{ cat.id_categoria }}</td>
         <td>{{ cat.cat_nombre }}</td>
         <td>{{ cat.cat_descripcion }}</td>
