@@ -16,6 +16,7 @@ import { AddCategoriasComponent } from './add-categorias/add-categorias.componen
 
 import Swal from 'sweetalert2';
 import { PipePersonalizadaPipe } from './pipe/pipe-personalizada.pipe';
+import { ProductosComponent } from './productos/productos.component';
 
 
 
@@ -27,7 +28,8 @@ import { PipePersonalizadaPipe } from './pipe/pipe-personalizada.pipe';
     CategoriasComponent,
     EditCategoriasComponent,
     AddCategoriasComponent,
-    PipePersonalizadaPipe
+    PipePersonalizadaPipe,
+    ProductosComponent
   ],
   imports: [
     BrowserModule,
