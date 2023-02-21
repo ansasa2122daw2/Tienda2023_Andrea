@@ -29,7 +29,7 @@ import { ProductosComponent } from './productos/productos.component';
     EditCategoriasComponent,
     AddCategoriasComponent,
     PipePersonalizadaPipe,
-    ProductosComponent
+    ProductosComponent,
   ],
   imports: [
     BrowserModule,
