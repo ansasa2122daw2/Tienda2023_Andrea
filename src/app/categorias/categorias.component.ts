@@ -15,6 +15,7 @@ export class CategoriasComponent {
   busquedaPost = '';
   cat1: Categoria = {id_categoria: 0, cat_nombre: "", cat_descripcion: ""};
   listado: Categoria[] = [];
+  categoria: Categoria;
 
   /**
    * Para enviar los datos a edit categoria donde esta el formulario
